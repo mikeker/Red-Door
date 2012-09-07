@@ -14,7 +14,7 @@ function rd_events_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_event';
-  $strongarm->value = 'edit-menu';
+  $strongarm->value = 'edit-node-recur';
   $export['additional_settings__active_tab_event'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -118,6 +118,41 @@ function rd_events_strongarm() {
   $strongarm->name = 'node_preview_event';
   $strongarm->value = '1';
   $export['node_preview_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_recur_allow_past_dates_node_type_event';
+  $strongarm->value = 0;
+  $export['node_recur_allow_past_dates_node_type_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_recur_date_field_node_type_event';
+  $strongarm->value = 'field_event_date';
+  $export['node_recur_date_field_node_type_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_recur_enabled_node_type_event';
+  $strongarm->value = 1;
+  $export['node_recur_enabled_node_type_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_recur_max_span_node_type_event';
+  $strongarm->value = '0';
+  $export['node_recur_max_span_node_type_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_recur_node_form_node_type_event';
+  $strongarm->value = 1;
+  $export['node_recur_node_form_node_type_event'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

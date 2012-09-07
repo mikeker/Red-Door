@@ -10,21 +10,86 @@
 function rd_events_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'node-event-field_date_time'.
-  $fields['node-event-field_date_time'] = array(
+  // Exported field: 'node-event-field_event_blurb'
+  $fields['node-event-field_event_blurb'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '-1',
+      'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_date_time',
+      'field_name' => 'field_event_blurb',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'module' => 'text',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'text_long',
+    ),
+    'field_instance' => array(
+      'bundle' => 'event',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'Short description of the event. This will be used when listing events on the site and when cross-posting to Facebook or Twitter.',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_event_blurb',
+      'label' => 'Event blurb',
+      'required' => 1,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'rows' => '5',
+        ),
+        'type' => 'text_textarea',
+        'weight' => '2',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-event-field_event_date'
+  $fields['node-event-field_event_date'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_event_date',
       'foreign keys' => array(),
       'indexes' => array(),
-      'locked' => '0',
       'module' => 'date',
       'settings' => array(
         'cache_count' => '4',
-        'cache_enabled' => 1,
+        'cache_enabled' => 0,
         'granularity' => array(
           'day' => 'day',
           'hour' => 'hour',
@@ -33,10 +98,9 @@ function rd_events_field_default_fields() {
           'second' => 0,
           'year' => 'year',
         ),
-        'repeat' => '1',
-        'timezone_db' => 'UTC',
+        'timezone_db' => '',
         'todate' => 'optional',
-        'tz_handling' => 'site',
+        'tz_handling' => 'none',
       ),
       'translatable' => '0',
       'type' => 'datetime',
@@ -55,10 +119,9 @@ function rd_events_field_default_fields() {
             'multiple_from' => '',
             'multiple_number' => '',
             'multiple_to' => '',
-            'show_repeat_rule' => 'show',
           ),
           'type' => 'date_default',
-          'weight' => 0,
+          'weight' => 2,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -68,11 +131,11 @@ function rd_events_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_date_time',
-      'label' => 'Date/Time',
-      'required' => 1,
+      'field_name' => 'field_event_date',
+      'label' => 'Event date',
+      'required' => 0,
       'settings' => array(
-        'default_value' => 'now',
+        'default_value' => 'blank',
         'default_value2' => 'same',
         'default_value_code' => '',
         'default_value_code2' => '',
@@ -84,10 +147,9 @@ function rd_events_field_default_fields() {
         'settings' => array(
           'display_all_day' => 1,
           'increment' => '15',
-          'input_format' => 'm/d/Y - H:i:s',
+          'input_format' => 'm/d/Y - g:i:sa',
           'input_format_custom' => '',
           'label_position' => 'above',
-          'repeat_collapsed' => 1,
           'text_parts' => array(),
           'year_range' => '-3:+3',
         ),
@@ -97,14 +159,14 @@ function rd_events_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-event-field_description'.
-  $fields['node-event-field_description'] = array(
+  // Exported field: 'node-event-field_event_description'
+  $fields['node-event-field_event_description'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_description',
+      'field_name' => 'field_event_description',
       'foreign keys' => array(
         'format' => array(
           'columns' => array(
@@ -118,17 +180,16 @@ function rd_events_field_default_fields() {
           0 => 'format',
         ),
       ),
-      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
-      'type' => 'text_with_summary',
+      'type' => 'text_long',
     ),
     'field_instance' => array(
       'bundle' => 'event',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Longer description of this event.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -145,11 +206,10 @@ function rd_events_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_description',
-      'label' => 'Event Description',
+      'field_name' => 'field_event_description',
+      'label' => 'Event description',
       'required' => 0,
       'settings' => array(
-        'display_summary' => 0,
         'text_processing' => '1',
         'user_register_form' => FALSE,
       ),
@@ -157,96 +217,9 @@ function rd_events_field_default_fields() {
         'active' => 1,
         'module' => 'text',
         'settings' => array(
-          'rows' => '20',
-          'summary_rows' => 5,
+          'rows' => '5',
         ),
-        'type' => 'text_textarea_with_summary',
-        'weight' => '2',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-event-field_sponsor'.
-  $fields['node-event-field_sponsor'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_sponsor',
-      'foreign keys' => array(
-        'node' => array(
-          'columns' => array(
-            'target_id' => 'nid',
-          ),
-          'table' => 'node',
-        ),
-      ),
-      'indexes' => array(
-        'target_id' => array(
-          0 => 'target_id',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'entityreference',
-      'settings' => array(
-        'handler' => 'base',
-        'handler_settings' => array(
-          'behaviors' => array(
-            'views-select-list' => array(
-              'status' => 0,
-            ),
-          ),
-          'sort' => array(
-            'direction' => 'ASC',
-            'field' => 'body:value',
-            'property' => 'nid',
-            'type' => 'none',
-          ),
-          'target_bundles' => array(
-            'manufacturer' => 'manufacturer',
-          ),
-        ),
-        'handler_submit' => 'Change handler',
-        'target_type' => 'node',
-      ),
-      'translatable' => '0',
-      'type' => 'entityreference',
-    ),
-    'field_instance' => array(
-      'bundle' => 'event',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'entityreference',
-          'settings' => array(
-            'link' => FALSE,
-          ),
-          'type' => 'entityreference_label',
-          'weight' => 2,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_sponsor',
-      'label' => 'Event Sponsor',
-      'required' => 0,
-      'settings' => array(
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'options',
-        'settings' => array(),
-        'type' => 'options_select',
+        'type' => 'text_textarea',
         'weight' => '3',
       ),
     ),
@@ -254,9 +227,11 @@ function rd_events_field_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Date/Time');
-  t('Event Description');
-  t('Event Sponsor');
+  t('Event blurb');
+  t('Event date');
+  t('Event description');
+  t('Longer description of this event.');
+  t('Short description of the event. This will be used when listing events on the site and when cross-posting to Facebook or Twitter.');
 
   return $fields;
 }

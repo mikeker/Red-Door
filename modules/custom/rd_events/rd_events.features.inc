@@ -22,9 +22,9 @@ function rd_events_node_info() {
     'event' => array(
       'name' => t('Event'),
       'base' => 'node_content',
-      'description' => t('One-time or recurring events.'),
+      'description' => t('One-time or recurring events'),
       'has_title' => '1',
-      'title_label' => t('Event Title'),
+      'title_label' => t('Event title'),
       'help' => '',
     ),
   );
