@@ -15,6 +15,13 @@ function rd_events_ctools_plugin_api() {
 }
 
 /**
+ * Implements hook_views_api().
+ */
+function rd_events_views_api() {
+  return array("version" => "3.0");
+}
+
+/**
  * Implements hook_node_info().
  */
 function rd_events_node_info() {
