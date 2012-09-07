@@ -2,3 +2,6 @@ files
 private
 settings.php
 .sass-cache
+modules/diff
+modules/ftools
+modules/devel
