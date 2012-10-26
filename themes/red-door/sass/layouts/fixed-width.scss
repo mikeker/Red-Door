@@ -14,7 +14,7 @@
 
 // We are going to create a 980px wide, 5 column grid with 20px gutters between
 // columns (applied as 10px of left/right padding on each column).
-$zen-column-count:  5;
+$zen-column-count:  4;
 $zen-gutter-width:  20px;
 $zen-grid-width:    980px;
 
@@ -23,10 +23,10 @@ $zen-grid-width:    980px;
 // - (Preferred) Install the box-sizing polyfill and set the variable below to
 //   the absolute path URL to the boxsizing.htc file.
 //   @see https://github.com/Schepp/box-sizing-polyfill
-//   $box-sizing-polyfill-path: "/path/to/boxsizing.htc";
+$box-sizing-polyfill-path: "/sites/all/libraries/box-sizing-polyfill/boxsizing.htc";
 // - Use the same CSS unit for grid width and gutter width (use px for both or
 //   use % for both, etc.) and set the box-sizing variable to content-box.
-     $zen-box-sizing: content-box;
+//     $zen-box-sizing: content-box;
 
 
 // You can generate more efficient CSS if you manually apply the
@@ -92,8 +92,8 @@ $zen-auto-include-item-base: false;
  */
 
 .sidebar-first {
-  #content { /* Span 4 columns, starting in 2nd column from left. */
-    @include zen-grid-item(4, 2);
+  #content { /* Span 3 columns, starting in 2nd column from left. */
+    @include zen-grid-item(3, 2);
   }
 
   .region-sidebar-first { /* Span 1 column, starting in 1st column from left. */
@@ -107,11 +107,11 @@ $zen-auto-include-item-base: false;
 
 .sidebar-second {
   #content { /* Span 4 columns, starting in 1st column from left. */
-    @include zen-grid-item(4, 1);
+    @include zen-grid-item(3, 1);
   }
 
   .region-sidebar-second { /* Span 1 column, starting in 5th column from left. */
-    @include zen-grid-item(1, 5);
+    @include zen-grid-item(1, 4);
   }
 }
 
@@ -121,7 +121,7 @@ $zen-auto-include-item-base: false;
 
 .two-sidebars {
   #content { /* Span 3 columns, starting in 2nd column from left. */
-    @include zen-grid-item(3, 2);
+    @include zen-grid-item(2, 2);
   }
 
   .region-sidebar-first { /* Span 1 column, starting in 1st column from left. */
@@ -129,6 +129,6 @@ $zen-auto-include-item-base: false;
   }
 
   .region-sidebar-second { /* Span 1 column, starting in 5th column from left. */
-    @include zen-grid-item(1, 5);
+    @include zen-grid-item(1, 4);
   }
 }

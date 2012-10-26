@@ -128,15 +128,17 @@ function red_door_preprocess_maintenance_page(&$variables, $hook) {
  * @param $hook
  *   The name of the template being rendered ("html" in this case.)
  */
-/* -- Delete this line if you want to use this function
 function red_door_preprocess_html(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
+  drupal_add_css('http://fonts.googleapis.com/css?family=Kaushan+Script', array(
+    'type' => 'external',
+    'group' => CSS_THEME,
+    'every_page' => TRUE,
+  ));
 
   // The body tag's classes are controlled by the $classes_array variable. To
   // remove a class from $classes_array, use array_diff().
   //$variables['classes_array'] = array_diff($variables['classes_array'], array('class-to-remove'));
 }
-// */
 
 /**
  * Override or insert variables into the page templates.
@@ -146,11 +148,28 @@ function red_door_preprocess_html(&$variables, $hook) {
  * @param $hook
  *   The name of the template being rendered ("page" in this case.)
  */
-/* -- Delete this line if you want to use this function
 function red_door_preprocess_page(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
+  if (empty($variables['page']['subheader_right'])) {
+    // Put page title there is there's nothing else in there
+    if (empty($variables['node'])) {
+      $title = t('Home');
+    }
+    else {
+      $title= $variables['node']->title;
+    }
+    $region = array(
+      '#theme_wrappers' => array('region'),
+      '#region' => 'subheader_right',
+      '#type' => 'markup',
+      '#markup' => drupal_render($variables['title_prefix'])
+        . '<h1 class="title" id="page-title">'
+        . $title
+        . '</h1>'
+        . drupal_render($variables['title_suffix'])
+    );
+    $variables['page']['subheader_right'] = $region;
+  }
 }
-// */
 
 /**
  * Override or insert variables into the node templates.

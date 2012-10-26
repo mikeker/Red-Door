@@ -50,7 +50,8 @@ stylesheets[all][] = system.menus.css
 ; Then we add our own stylesheets.
 stylesheets[all][] = css/normalize.css
 stylesheets[all][] = css/wireframes.css
-stylesheets[all][] = css/layouts/responsive-sidebars.css
+; stylesheets[all][] = css/layouts/responsive-sidebars.css
+; stylesheets[all][] = css/layouts/fixed-width.css
 stylesheets[all][] = css/page-backgrounds.css
 stylesheets[all][] = css/tabs.css
 stylesheets[all][] = css/pages.css
@@ -62,6 +63,10 @@ stylesheets[all][] = css/comments.css
 stylesheets[all][] = css/forms.css
 stylesheets[all][] = css/fields.css
 stylesheets[all][] = css/print.css
+
+; Custom styling for the Red Door site
+stylesheets[all][] = css/red-door.css
+
 
 ; Built-in conditional stylesheet support has been removed from Zen 7.x-5.x.
 ; Instead, Zen now adds conditional-comment-included classes to the html
@@ -96,15 +101,17 @@ stylesheets[all][] = css/print.css
 ; And you'll use this variable in maintenance-page.tpl.php:
 ;   <?php print $header_top; ?>
 
-regions[header]         = Header
-regions[navigation]     = Navigation bar
-regions[highlighted]    = Highlighted
-regions[help]           = Help
+;regions[header_top]     = Header Top
+;regions[subheader_left] = Subheader Left
+;regions[subheader_right]= Subheader Right
+;regions[navigation]     = Navigation bar
+;regions[highlighted]    = Highlighted
+;regions[help]           = Help
 regions[content]        = Content
-regions[sidebar_first]  = First sidebar
-regions[sidebar_second] = Second sidebar
-regions[footer]         = Footer
-regions[bottom]         = Page bottom
+;regions[sidebar_first]  = First sidebar
+;regions[sidebar_second] = Second sidebar
+;regions[footer]         = Footer
+;regions[bottom]         = Page bottom
 
 ; The page_top and page_bottom regions are hidden, which means they will not
 ; show up on the blocks administration page. But they are required in order for
@@ -155,4 +162,4 @@ settings[zen_wireframes]           = 0
 
 ; To add a Panels layout (which can also be used by Display Suite), uncomment
 ; the line below and see the documentation at: http://drupal.org/node/495654
-;plugins[panels][layouts] = layouts
+plugins[panels][layouts] = plugins/layouts

@@ -85,7 +85,6 @@ $font-monospace:   $courier;
 // The amount lists, blockquotes and comments are indented.
 $indent-amount: 30px;
 
-
 //
 // Partials to be shared with all .scss files.
 //
@@ -98,3 +97,11 @@ $indent-amount: 30px;
 @import "zen";              // Add the Zen Grids responsive layout mixins.
 
 @import "custom";           // Import our custom mixins last.
+
+// Do these variables after importing zen grids as we reply on vars from that file
+
+// Spacing
+$space: $zen-gutter-width;
+$small-space: $space / 2;
+
+

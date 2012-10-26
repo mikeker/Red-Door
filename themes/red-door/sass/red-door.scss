@@ -1,0 +1,55 @@
+/*
+ * Overrides specific to the Red Door site.
+ *
+ * In general elements styled here do not show up in .tpl.php files. Those, in
+ * keeping with the "Zen way" are styled in the SCSS file of the same name (e.g:
+ * page.tpl.php elements are styled in page.scss).
+ */
+
+@import "base";
+
+/*
+ * Universal styling
+ */
+h1, h2, h3, h4 {
+  font-weight: normal;
+}
+
+/*
+ * Specific area styling
+ */
+
+/* Header */
+#subheader {
+  #header-image {
+    float: left;
+    height: 150px;
+    width: 300px;
+    margin-right: $space;
+
+    // DEBUG:
+    background-color: red;
+  }
+  .region-subheader-left {
+    float: left;
+    p {
+      float: left;
+    }
+  }
+  .region-subheader-right {
+    float: right;
+
+    #page-title {
+      text-align: right;
+      margin-right: .3em;
+      font-family: "Kaushan Script";
+      font-size: 2.5em;
+      line-height: 150px;   // Same as #header-image => height
+    }
+  }
+}
+
+/* Facebook widget needs to span the full width of the column(s) it's in */
+#block-block-2 {
+  margin-left: -1 * $small-space;
+}

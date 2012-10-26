@@ -1,0 +1,53 @@
+/*
+ * Overrides specific to the Red Door site.
+ *
+ * In general elements styled here do not show up in .tpl.php files. Those, in
+ * keeping with the "Zen way" are styled in the SCSS file of the same name (e.g:
+ * page.tpl.php elements are styled in page.scss).
+ */
+/*
+ * Universal styling
+ */
+/* line 14, ../sass/red-door.scss */
+h1, h2, h3, h4 {
+  font-weight: normal;
+}
+
+/*
+ * Specific area styling
+ */
+/* Header */
+/* line 24, ../sass/red-door.scss */
+#subheader #header-image {
+  float: left;
+  height: 150px;
+  width: 300px;
+  margin-right: 20px;
+  background-color: red;
+}
+/* line 33, ../sass/red-door.scss */
+#subheader .region-subheader-left {
+  float: left;
+}
+/* line 35, ../sass/red-door.scss */
+#subheader .region-subheader-left p {
+  float: left;
+}
+/* line 39, ../sass/red-door.scss */
+#subheader .region-subheader-right {
+  float: right;
+}
+/* line 42, ../sass/red-door.scss */
+#subheader .region-subheader-right #page-title {
+  text-align: right;
+  margin-right: .3em;
+  font-family: "Kaushan Script";
+  font-size: 2.5em;
+  line-height: 150px;
+}
+
+/* Facebook widget needs to span the full width of the column(s) it's in */
+/* line 53, ../sass/red-door.scss */
+#block-block-2 {
+  margin-left: -10px;
+}

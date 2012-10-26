@@ -88,6 +88,14 @@ body {
   clear: both; /* Clear the logo */
 }
 
+#subheader {
+  @include clearfix;
+
+  .region {
+    float: left;
+  }
+}
+
 /*
  * Main (container for everything else)
  */
