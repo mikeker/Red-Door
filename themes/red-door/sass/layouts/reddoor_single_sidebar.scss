@@ -1,0 +1,21 @@
+/**
+/**
+ * @file
+ * Red Door Front Page panel layout
+**/
+@import "base";
+
+.red-door-single-sidebar {
+  width: 960px;
+  @include clearfix;
+
+  #content {
+    float: left;
+    width: 700px;
+    margin-left: 10px;
+  }
+
+  #sidebar-1 {
+    width: 240px;
+  }
+}
