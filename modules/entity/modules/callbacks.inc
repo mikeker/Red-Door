@@ -610,28 +610,46 @@ function entity_metadata_field_file_validate_item($items, $context) {
 /**
  * Access callback for the node entity.
  *
- * This function does not implement hook_node_access(), thus it may not be
- * called entity_metadata_node_access().
+ * Why the strange function name? This function does not implement
+ * hook_node_access(), and thus it can't be called
+ * entity_metadata_node_access().
+ *
+ * @see entity_access()
+ *
+ * @param $op
+ *   The operation being performed. One of 'view', 'update', 'create' or
+ *   'delete'.
+ * @param $node
+ *   A node to check access for. Must be a node object. Must have nid,
+ *   except in the case of 'create' operations.
+ * @param $account
+ *   The user to check for. Leave it to NULL to check for the global user.
+ *
+ * @return boolean
+ *   TRUE if access is allowed, FALSE otherwise.
  */
 function entity_metadata_no_hook_node_access($op, $node = NULL, $account = NULL) {
-  if (isset($node)) {
-    // If a non-default revision is given, incorporate revision access.
-    $default_revision = node_load($node->nid);
-    if ($node->vid != $default_revision->vid) {
-      return _node_revision_access($node, $op);
-    }
-    else {
-      return node_access($op, $node, $account);
-    }
-  }
-  // Is access to all nodes allowed?
-  if (!user_access('access content', $account)) {
+  if (!is_object($node)) {
     return FALSE;
   }
-  if (user_access('bypass node access', $account) || (!isset($account) && $op == 'view' && node_access_view_all_nodes())) {
-    return TRUE;
+  if ('create' == $op) {
+    // Node's create access system needs a bundle name.
+    if (isset($node->type)) {
+      return node_access($op, $node->type, $account);
+    }
+    // No way to glean the bundle type so we deny create access.
+    return FALSE;
   }
-  return FALSE;
+  // Both _node_revision_access() and node_acces() require $node->nid.
+  if (!isset($node->nid)) {
+    return FALSE;
+  }
+  // Handle the revision special case.
+  $default_revision = node_load($node->nid);
+  if ($node->vid !== $default_revision->vid) {
+    return _node_revision_access($node, $op, $account);
+  }
+  return node_access($op, $node, $account);
 }
 
 /**
