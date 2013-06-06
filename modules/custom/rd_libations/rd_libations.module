@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Red Door Libations feature.
+ */
+
+include_once 'rd_libations.features.inc';
