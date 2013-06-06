@@ -10,7 +10,7 @@
 function rd_events_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'node-event-field_event_blurb'
+  // Exported field: 'node-event-field_event_blurb'.
   $fields['node-event-field_event_blurb'] = array(
     'field_config' => array(
       'active' => '1',
@@ -31,6 +31,7 @@ function rd_events_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
@@ -76,7 +77,7 @@ function rd_events_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-event-field_event_date'
+  // Exported field: 'node-event-field_event_date'.
   $fields['node-event-field_event_date'] = array(
     'field_config' => array(
       'active' => '1',
@@ -86,6 +87,7 @@ function rd_events_field_default_fields() {
       'field_name' => 'field_event_date',
       'foreign keys' => array(),
       'indexes' => array(),
+      'locked' => '0',
       'module' => 'date',
       'settings' => array(
         'cache_count' => '4',
@@ -98,6 +100,7 @@ function rd_events_field_default_fields() {
           'second' => 0,
           'year' => 'year',
         ),
+        'repeat' => 0,
         'timezone_db' => '',
         'todate' => 'optional',
         'tz_handling' => 'none',
@@ -119,6 +122,7 @@ function rd_events_field_default_fields() {
             'multiple_from' => '',
             'multiple_number' => '',
             'multiple_to' => '',
+            'show_repeat_rule' => 'show',
           ),
           'type' => 'date_default',
           'weight' => 2,
@@ -150,6 +154,7 @@ function rd_events_field_default_fields() {
           'input_format' => 'm/d/Y - g:i:sa',
           'input_format_custom' => '',
           'label_position' => 'above',
+          'repeat_collapsed' => 0,
           'text_parts' => array(),
           'year_range' => '-3:+3',
         ),
@@ -159,7 +164,7 @@ function rd_events_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-event-field_event_description'
+  // Exported field: 'node-event-field_event_description'.
   $fields['node-event-field_event_description'] = array(
     'field_config' => array(
       'active' => '1',
@@ -180,6 +185,7 @@ function rd_events_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',

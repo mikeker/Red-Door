@@ -1,6 +1,6 @@
 name = Red Door Events
 core = 7.x
-package = Features
+package = Red Door
 php = 5.2.4
 dependencies[] = ctools
 dependencies[] = date
