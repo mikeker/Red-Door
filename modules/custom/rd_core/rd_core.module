@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Red Door Core feature.
+ */
+
+include_once 'rd_core.features.inc';
