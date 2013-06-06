@@ -8,7 +8,7 @@ include_once 'rd_events.features.inc';
 
 function rd_events_form_event_node_form_alter(&$form, &$form_state) {
   if(!drupal_add_library('rd_events', 'jquery-timepicker')) {
-    watchdog('Red Door', 'Unable to add jQuery Timepicker', WATCHDOG_ERROR);
+    watchdog('Red Door', 'Unable to add jQuery Timepicker', array(), WATCHDOG_ERROR);
   }
   drupal_add_js(
     drupal_get_path('module', 'rd_events') . '/rd_events.js',
@@ -18,15 +18,15 @@ function rd_events_form_event_node_form_alter(&$form, &$form_state) {
 
 function rd_events_library() {
   $path = libraries_get_path('jquery-timepicker');
-  $libraries['rd_events'] = array(
+  $libraries['jquery-timepicker'] = array(
     'title' => 'jQuery Timepicker',
     'website' => 'https://github.com/jonthornton/jquery-timepicker',
     'version' => '1.0',
     'js' => array(
-      "$path/jquery-timepicker.min.js" => array()
+      "$path/jquery.timepicker.min.js" => array()
     ),
     'css' => array(
-      "$path/jquery-timepicker.css" => array(
+      "$path/jquery.timepicker.css" => array(
         'type' => 'file',
         'media' => 'screen',
       ),
