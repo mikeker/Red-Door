@@ -14,10 +14,10 @@
     //       .append('<input name="rd_events_time2" class="form-text" type="text" />')
     //   ;
 
-      var $field = $('#edit-field-event-date-und-0-value-timeEntry-popup-1');
-      if ($field.length) {
-        $field.timepicker();
-      }
+      // var $field = $('#edit-field-event-date-und-0-value-timeEntry-popup-1');
+      // if ($field.length) {
+      //   $field.timepicker();
+      // }
     }
   };
 })(jQuery);
