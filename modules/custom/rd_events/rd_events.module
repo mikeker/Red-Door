@@ -23,7 +23,8 @@ function rd_events_library() {
     'website' => 'https://github.com/jonthornton/jquery-timepicker',
     'version' => '1.0',
     'js' => array(
-      "$path/jquery.timepicker.min.js" => array()
+      // "$path/jquery.timepicker.min.js" => array()
+      "$path/jquery.timepicker.js" => array()
     ),
     'css' => array(
       "$path/jquery.timepicker.css" => array(
